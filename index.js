@@ -26,6 +26,7 @@ async function startServer() {
       try {
         const passwords = await collection.find({}).toArray();
         res.json(passwords);
+        res.send(passwords)
       } catch (err) {
         console.error("Error fetching products:", err);
         res.status(500).send("An error occurred while fetching passwords.");
